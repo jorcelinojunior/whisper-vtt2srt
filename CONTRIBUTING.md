@@ -4,6 +4,16 @@ First off, thanks for taking the time to contribute! ❤️
 
 All types of contributions are encouraged and valued. See the [Table of Contents](#table-of-contents) for different ways to help and details about how this project handles them.
 
+## Table of Contents
+
+* [Code of Conduct](#code-of-conduct)
+* [How Can I Contribute?](#how-can-i-contribute)
+  * [Reporting Bugs](#reporting-bugs)
+  * [Suggesting Enhancements](#suggesting-enhancements)
+  * [Pull Requests](#pull-requests)
+* [Styleguides](#styleguides)
+
+
 ## Code of Conduct
 
 This project and everyone participating in it is governed by the [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
