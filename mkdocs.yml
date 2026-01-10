@@ -1,0 +1,63 @@
+site_name: whisper-vtt2srt
+site_description: A professional, robust library for converting WebVTT to SRT.
+site_url: https://jorcelinojunior.github.io/whisper-vtt2srt/
+repo_url: https://github.com/jorcelinojunior/whisper-vtt2srt
+repo_name: whisper-vtt2srt
+
+theme:
+  name: material
+  logo: img/icon.png
+  favicon: img/icon.png
+  features:
+    - content.code.copy
+    - content.code.select
+    - navigation.expand
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: deep purple
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: deep purple
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: ["."]
+          options:
+            docstring_style: google
+            show_source: true
+            show_root_heading: true
+
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
+nav:
+  - Home: index.md
+  - API Reference:
+      - Pipeline: api/pipeline.md
+      - Batch Processing: api/batch.md
+      - Options: api/options.md
+      - Domain Models: api/models.md
+  - Contributing: contributing.md
