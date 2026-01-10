@@ -72,7 +72,15 @@ WEBVTT
 Kind: captions
 Language: en
 
-00:00:03.110 --> 00:00:05.430 align:start position:0%
+00:00:00.640 --> 00:00:03.110 align:start position:0%
+ 
+APIs<00:00:01.280><c> are</c><00:00:01.520><c> everywhere.</c><00:00:02.399><c> They</c><00:00:02.639><c> power</c><00:00:02.960><c> your</c>
+
+00:00:03.110 --> 00:00:03.120 align:start position:0%
+APIs are everywhere. They power your
+ 
+
+00:00:03.120 --> 00:00:05.430 align:start position:0%
 APIs are everywhere. They power your
 apps,<00:00:03.600><c> your</c><00:00:03.840><c> payment</c><00:00:04.160><c> systems,</c><00:00:04.880><c> your</c><00:00:05.120><c> cloud</c>
 
@@ -81,11 +89,14 @@ apps, your payment systems, your cloud
  
 
 00:00:05.440 --> 00:00:07.829 align:start position:0%
-
 apps, your payment systems, your cloud
 services,<00:00:06.560><c> pretty</c><00:00:06.879><c> much</c><00:00:07.120><c> every</c><00:00:07.440><c> piece</c><00:00:07.680><c> of</c>
 
 00:00:07.829 --> 00:00:07.839 align:start position:0%
+services, pretty much every piece of
+ 
+
+00:00:07.839 --> 00:00:10.470 align:start position:0%
 services, pretty much every piece of
 ```
 
@@ -98,11 +109,15 @@ services, pretty much every piece of
 
 ```srt
 1
-00:00:03,110 --> 00:00:05,430
-APIs are everywhere. They power your apps, your payment systems, your cloud
+00:00:00,640 --> 00:00:05,430
+APIs are everywhere. They power your
 
 2
-00:00:05,440 --> 00:00:07,829
+00:00:03,120 --> 00:00:07,829
+apps, your payment systems, your cloud
+
+3
+00:00:05,440 --> 00:00:10,470
 services, pretty much every piece of
 ```
 

@@ -61,4 +61,5 @@ nav:
       - Options: api/options.md
       - Domain Models: api/models.md
   - Contributing: contributing.md
+  - Release Guide: release_guide.md
   - Code of Conduct: CODE_OF_CONDUCT.md
