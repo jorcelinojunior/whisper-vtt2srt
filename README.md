@@ -28,30 +28,30 @@
 
 ---
 
-## The Problem with Raw AI Subtitles 🧠
+## 🧠 The Problem with Raw AI Subtitles
 
 AI tools like Whisper are incredible at speech recognition, but their raw VTT output is often chaotic. They frequently produce:
 
 * **The "Karaoke Effect":** Words accumulating screen-by-screen (e.g., "Hello", "Hello world", "Hello world!").
 * **Micro-Glitches:** Subtitle frames lasting milliseconds that are invisible to humans but break TTS/dubbing scripts.
-* **Metadata Clutter:** Tags like `align:start` or `<c>` that mess up text processing.
+* **Metadata Clutter:** Tags like `align:start`, `<c>`, `<b>` or `<i>` that mess up text processing.
 
 **whisper-vtt2srt** is the bridge between raw AI output and your production pipeline.
 It stabilizes and normalizes the text, making it safe for **Text-to-Speech (TTS) generation**, video players, and NLP tasks.
 
 ---
 
-## Table of Contents 📖
+## 📖 Table of Contents
 
 * [👀 See the Difference](#-see-the-difference-before-vs-after)
 * [🚀 Key Features](#-key-features)
 * [📦 Installation](#-installation)
 * [📘 How to Use](#-how-to-use)
-  - [💻 CLI Usage](#-cli-usage)
-    - [Command Help](#command-help)
-  - [🐍 Python API Usage](#-python-api-usage)
-    - [Basic Conversion](#basic-conversion)
-    - [Advanced Control](#advanced-control)
+  * [💻 CLI Usage](#-cli-usage)
+    * [Command Help](#command-help)
+  * [🐍 Python API Usage](#-python-api-usage)
+    * [Basic Conversion](#basic-conversion)
+    * [Advanced Control](#advanced-control)
 * [🧠 How It Works](#-how-it-works)
 * [📆 Changelog](#-changelog)
 * [🤝 Contributing](#-contributing)
