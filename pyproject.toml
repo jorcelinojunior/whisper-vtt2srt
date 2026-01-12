@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "whisper-vtt2srt"
-version = "0.1.0"
+version = "0.1.1"
 description = "A professional, robust library for converting WebVTT to SRT with advanced cleaning capabilities for AI-generated subtitles."
 readme = "README.md"
 authors = [
@@ -40,8 +40,9 @@ docs = [
     "mkdocs-material>=9.0",
     "mkdocstrings[python]>=0.24"
 ]
-[tool.setuptools]
-packages = ["whisper_vtt2srt"]
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["whisper_vtt2srt*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

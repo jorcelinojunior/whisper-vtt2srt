@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-01-12
+
+### Fixed
+
+- **Packaging**: Corrected `pyproject.toml` to include all subpackages (domain, adapters, use_cases) which were missing in 0.1.0 release.
+
+## [0.1.0] - 2026-01-12
+
 ### Added
 
 - **Sound Description Removal**: Automatically filter out elements like `[Music]` or `[Applause]` for cleaner output.
@@ -18,11 +26,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Feature**: Added `ShortLineMerger` filter to merge short lines within a block.
 - **Config**: Added `max_line_length` option (default: 42) to control line merging.
 - **CLI**: Added `--merge-short-lines` and `--max-line-length` flags.
-
-## [0.1.0] - 2026-01-09
-
-### Added
-
 - **Core Conversion Logic**: Implemented robust `VttParser` and `SrtWriter` based on SOLID principles.
 - **Cleaning Filters**:
   - `KaraokeDeduplicator`: Intelligent sliding window algorithm to remove "karaoke effect" (accumulating text) from AI subtitles.
