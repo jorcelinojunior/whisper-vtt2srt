@@ -13,7 +13,7 @@ We use PyPI's **Trusted Publishing** (OIDC) to securely publish packages without
     - **Owner**: `jorcelinojunior`
     - **Repository**: `whisper-vtt2srt`
     - **Workflow name**: `release.yml`
-    - **Environment**: (Leave blank)
+    - **Environment**: `pypi`
 5. Click **"Add publisher"**.
 
 ## 2. How to Publish a New Version
@@ -23,6 +23,7 @@ When you are ready to release, simply create and push a Git tag:
 1. **Update the version**: Change the `version` field in `pyproject.toml`.
 2. **Update the Changelog**: Add the new version details to `CHANGELOG.md`.
 3. **Commit and Tag**:
+
    ```bash
    git add pyproject.toml CHANGELOG.md
    git commit -m "chore: release v0.1.0"
@@ -31,6 +32,7 @@ When you are ready to release, simply create and push a Git tag:
    ```
 
 ### What happens next?
+
 - The **Release** workflow will trigger.
 - It runs the full CI suite (`pytest`, `ruff`, `mypy`).
 - If successful, it creates a **GitHub Release** with automated notes.
