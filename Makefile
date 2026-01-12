@@ -3,21 +3,24 @@
 # Default target
 all: test
 
+# Environment variable for binary path (default to local venv)
+BIN ?= ./venv/bin/
+
 # Install dependencies and the package in editable mode
 install:
-	./venv/bin/pip install -e .[dev,docs] pytest ruff mypy
+	$(BIN)pip install -e .[dev,docs] pytest ruff mypy build
 
 # Run tests
 test:
-	./venv/bin/pytest
+	$(BIN)pytest
 
 # Simulate CI locally (Install + Lint + Test)
 ci: install lint test
 
 # Run linting
 lint:
-	./venv/bin/ruff check .
-	./venv/bin/mypy whisper_vtt2srt --ignore-missing-imports
+	$(BIN)ruff check .
+	$(BIN)mypy whisper_vtt2srt --ignore-missing-imports
 
 # Clean build artifacts
 clean:
@@ -26,18 +29,18 @@ clean:
 
 # Documentation
 docs-serve:
-	./venv/bin/mkdocs serve
+	$(BIN)mkdocs serve
 
 docs-build:
-	./venv/bin/mkdocs build
+	$(BIN)mkdocs build
 
 # Release
 build:
-	./venv/bin/pip install build twine
-	./venv/bin/python -m build
+	$(BIN)pip install build twine
+	$(BIN)python -m build
 
 publish-test: build
-	./venv/bin/twine upload --repository testpypi dist/*
+	$(BIN)twine upload --repository testpypi dist/*
 
 publish: build
-	./venv/bin/twine upload dist/*
+	$(BIN)twine upload dist/*
