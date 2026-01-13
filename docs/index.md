@@ -2,7 +2,7 @@
   <a href="https://www.buymeacoffee.com/jorcelinojunior" target="_blank">
     <img
       src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
-      alt="Buy Me A Coffee"
+      alt="Buy Me a Coffee"
       width="120"
     />
   </a>

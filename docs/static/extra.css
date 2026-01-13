@@ -1,0 +1,5 @@
+:root  > * { --md-primary-fg-color: #1C212F; }
+
+@media screen and (min-width: 76.25em) {
+  [dir=ltr] .md-nav--primary .md-nav__list { padding-left: 1.5rem; }
+}

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="../img/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="../img/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="../img/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../img/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="../img/favicon/site.webmanifest" />
+
+  <title>Srt Converter Playground - Whisper VTT2SRT</title>
+
+  <!-- Design Resources -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <!-- PyScript -->
+  <link rel="stylesheet" href="https://pyscript.net/releases/2025.2.3/core.css" />
+  <script type="module" src="https://pyscript.net/releases/2025.2.3/core.js"></script>
+  <!-- <script async="async" data-cfasync="false" src="https://pl28464901.effectivegatecpm.com/be97e79d30e7ea80c81cb60b5629e8e5/invoke.js"></script> -->
+  <script async="async" data-cfasync="false" src="invoke.js"></script>
+
+  <script> function loadFallback() { var s = document.createElement('script'); s.src = 'invoke.js'; document.head.appendChild(s); } </script>
+  <script src="https://pl28464901.effectivegatecpm.com/be97e79d30e7ea80c81cb60b5629e8e5/invoke.js" async="async" data-cfasync="false" onerror="this.onerror=null; loadFallback();"></script>
+
+  <!-- Custom Style -->
+  <link rel="stylesheet" href="playground.css">
+</head>
+
+<body>
+
+  <!-- Header (Hidden in Embed Mode) -->
+  <header>
+    <a href="https://github.com/jorcelinojunior/whisper-vtt2srt" class="brand" target="_blank"
+      rel="noopener">whisper-vtt2srt</a>
+    <nav class="nav_links">
+      <a href="https://jorcelinojunior.github.io/whisper-vtt2srt/" target="_blank" rel="noopener">Documentation</a>
+      <a href="https://github.com/jorcelinojunior/whisper-vtt2srt" class="github-btn" target="_blank" rel="noopener">
+        <span>GitHub</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+        </svg>
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Top Ad Placeholder -->
+    <div id="container-be97e79d30e7ea80c81cb60b5629e8e5" class="ad-container">
+    </div>
+
+    <!-- App Container -->
+    <div class="app-card">
+      <!-- Input -->
+      <div class="editor-col">
+        <div class="editor-header">
+          <span class="editor-label">Input (VTT)</span>
+          <span class="editor-label" style="font-size: 0.8rem; opacity: 0.6">Paste content</span>
+        </div>
+        <textarea id="input_vtt" spellcheck="false" autocorrect="off" autocapitalize="off" translate="no"
+          autocomplete="off"
+          placeholder="WEBVTT&#10;Kind: captions&#10;Language: en&#10;&#10;00:00:01.000 --> 00:00:04.000&#10;Paste your subtitle content here...">WEBVTT
+Kind: captions
+Language: en
+
+00:00:01.000 --> 00:00:04.000
+Start pasting your VTT
+content here to test.</textarea>
+      </div>
+
+      <!-- Controls -->
+      <div class="actions-col">
+        <button id="convert_btn" class="convert-btn" title="Convert to SRT" py-click="convert_vtt">
+          <span id="btn_icon">&#10140;</span>
+          <div id="spinner"></div>
+        </button>
+      </div>
+
+      <!-- Output -->
+      <div class="editor-col">
+        <div class="editor-header">
+          <span class="editor-label">Output (SRT)</span>
+          <span class="editor-label" style="font-size: 0.8rem; opacity: 0.6">Read Only</span>
+        </div>
+        <textarea id="output_srt" readonly placeholder="SRT result will appear here..." spellcheck="false"
+          autocorrect="off" autocapitalize="off" translate="no" autocomplete="off"></textarea>
+      </div>
+    </div>
+
+    <!-- SEO and Educational Content -->
+    <div class="content-section">
+
+      <article class="content-block">
+        <h2>What is WebVTT?</h2>
+        <p>
+          <strong>WebVTT</strong> (Web Video Text Tracks) is the W3C standard for displaying timed text synchronized
+          with HTML5 <code>&lt;video&gt;</code> elements.
+          It is an evolution of the older SRT format, adding advanced features like text alignment, positioning, and CSS
+          styling support.
+        </p>
+        <p>
+          While powerful, VTT files generated by automated tools often contain complex metadata and "Karaoke-style"
+          partial updates that are difficult for standard players or Text-to-Speech engines to handle.
+          For more technical details, you can visit the official <a
+            href="https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API" target="_blank" rel="noopener">MDN WebVTT
+            API Documentation</a>.
+        </p>
+      </article>
+
+      <article class="content-block">
+        <h2>Clean Whisper Subtitles & yt-dlp Workflow</h2>
+        <p>
+          If you use <strong>OpenAI Whisper</strong> for transcription or <strong>yt-dlp</strong> to download YouTube
+          auto-captions, you've likely encountered the "stuttering" effect where text accumulates line-by-line.
+          This <em>Karaoke Deduplication</em> is exactly what this tool solves.
+        </p>
+        <h3>The Modern Subtitle Pipeline:</h3>
+        <ul>
+          <li><strong>Ingestion:</strong> Use <a href="https://github.com/yt-dlp/yt-dlp" target="_blank"
+              rel="noopener">yt-dlp</a> to fetch high-quality VTT streams.</li>
+          <li><strong>Transcription:</strong> Process audio through Whisper to get ultra-accurate time-anchored text.
+          </li>
+          <li><strong>Normalization:</strong> Use <code>whisper-vtt2srt</code> to convert the messy VTT into a clean,
+            human-readable SRT.</li>
+        </ul>
+      </article>
+
+      <article class="content-block">
+        <h2>Why Clean VTT for TTS?</h2>
+        <p>
+          <strong>Text-to-Speech (TTS)</strong> engines like <a href="https://try.elevenlabs.io/gs6obkjg0hun"
+            target="_blank" rel="noopener">ElevenLabs</a>, <a
+            href="https://platform.openai.com/docs/guides/audio#text-to-speech">OpenAI Audio</a>, or <a
+            href="https://github.com/idiap/coqui-ai-TTS" target="_blank" rel="noopener">Coqui TTS</a>
+          require clean,
+          punctuation-normalized text.
+          Tags like <code>&lt;c&gt;</code>, <code>&lt;b&gt;</code>, and sound descriptions such as <code>[Music]</code>
+          or <code>(Laughter)</code> can confuse the AI voice, leading to unnatural pauses or literal reading of
+          bracketed text.
+        </p>
+        <p>
+          Our converter acts as a <strong>subtitle preprocessor</strong>, stripping away the noise and ensuring the text
+          is perfectly formatted for AI voice generation, video dubbing, or high-quality captioning.
+        </p>
+      </article>
+
+      <article class="content-block"
+        style="text-align: center; border-top: 1px solid var(--glass-border); padding-top: 40px;">
+        <h3>Ready to automate?</h3>
+        <p>Install the Python package for batch processing millions of files.</p>
+        <code id="pip_install">pip install whisper-vtt2srt</code>
+      </article>
+
+    </div>
+
+  </main>
+
+  <!-- Footer (Hidden in Embed Mode) -->
+  <footer>
+    <p>&copy; 2026 whisper-vtt2srt Project. Open Source under MIT License.</p>
+  </footer>
+
+  <!-- PyScript Config -->
+  <py-config>
+    packages = ["whisper-vtt2srt==0.1.1"]
+  </py-config>
+
+  <!-- App Logic -->
+  <script type="py">
+        from js import document, window
+        import sys
+        import time
+        from whisper_vtt2srt import Pipeline
+
+        # --- UI Helpers ---
+        def set_loading(is_loading):
+            btn_icon = document.getElementById("btn_icon")
+            spinner = document.getElementById("spinner")
+            input_area = document.getElementById("input_vtt")
+
+            if is_loading:
+                btn_icon.style.display = "none"
+                spinner.style.display = "block"
+                input_area.disabled = True
+            else:
+                btn_icon.style.display = "block"
+                spinner.style.display = "none"
+                input_area.disabled = False
+
+        def log_error(msg):
+            out = document.getElementById("output_srt")
+            out.value = f"ERROR:\n{msg}"
+
+        # --- Core Function ---
+        def convert_vtt(event):
+            try:
+                set_loading(True)
+
+                # Small delay to allow UI to update before Python blocks main thread
+                # In true async PyScript this might need await, but for sync block:
+
+                vtt_content = document.getElementById("input_vtt").value
+
+                if not vtt_content.strip():
+                    document.getElementById("output_srt").value = ""
+                    set_loading(False)
+                    return
+
+                # Convert using the verified API
+                pipeline = Pipeline()
+                result = pipeline.convert(vtt_content)
+
+                document.getElementById("output_srt").value = result
+
+            except Exception as e:
+                import traceback
+                log_error(f"{str(e)}\n\n{traceback.format_exc()}")
+            finally:
+                set_loading(False)
+
+        # --- Initialization Check ---
+        try:
+            # Pre-warm the library so the first click feels faster
+            _ = Pipeline()
+            print("Library pre-warmed successfully")
+        except Exception as e:
+            print(f"Library load warning: {e}")
+
+    </script>
+
+  <!-- Mode Detection & Theme Sync JS -->
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const isEmbed = urlParams.get('embed') === 'true';
+
+    // 1. Activate Embed Mode
+    if (isEmbed) {
+      document.body.classList.add('embed-mode');
+    }
+
+    // 2. Theme Synchronization (Same-Origin Only)
+    // This allows the iframe to react to the MkDocs theme toggle (Light/Dark)
+    function initThemeSync() {
+      try {
+        // Access parent window (this works because docs and playground are on same domain)
+        const parentDoc = window.parent.document;
+        const parentBody = parentDoc.body;
+
+        const updateTheme = () => {
+          // MkDocs Material uses 'data-md-color-scheme' attribute on body
+          // 'default' = Light, 'slate' = Dark
+          const scheme = parentBody.getAttribute('data-md-color-scheme');
+
+          if (scheme === 'default') {
+            document.body.classList.add('light-theme');
+            document.body.classList.remove('dark-theme');
+          } else {
+            document.body.classList.add('dark-theme');
+            document.body.classList.remove('light-theme');
+          }
+          console.log(`[Playground] Theme synced: ${scheme}`);
+        };
+
+        // Initial Sync
+        updateTheme();
+
+        // Watch for changes (User clicks toggle)
+        const observer = new MutationObserver((mutations) => {
+          mutations.forEach((mutation) => {
+            if (mutation.attributeName === 'data-md-color-scheme') {
+              updateTheme();
+            }
+          });
+        });
+
+        observer.observe(parentBody, { attributes: true });
+
+      } catch (e) {
+        // Determine fallback if blocked (e.g. Cross-Origin or standalone)
+        console.warn("[Playground] Theme sync failed (likely Cross-Origin). Using default.", e);
+        // Fallback: Check System Preference
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+          document.body.classList.add('light-theme');
+        }
+      }
+    }
+
+    // Run Sync
+    if (isEmbed) {
+      initThemeSync();
+    }
+  </script>
+</body>
+
+</html>
