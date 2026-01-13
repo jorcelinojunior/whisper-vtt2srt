@@ -7,6 +7,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.2] - 2026-01-13
+
+### Added
+
+- **Online Playground**: Introduced an interactive browser-based playground using PyScript to test conversions instantly.
+- **Usage Examples**: Added `examples/basic_usage.py` demonstrating the high-level Pipeline API.
+- **VS Code Integration**: Added recommended extensions, launch configurations, and settings for a better development experience.
+- **Entry Point**: Added `__main__.py` to allow running the package directly via `python -m whisper_vtt2srt`.
+
+### Changed
+
+- **Documentation**: Enhanced README with playground previews and better formatting.
+- **Build System**: Updated `mkdocs.yml` with advanced markdown extensions (admonitions, code blocks, etc.) and navigation improvements.
+- **DX**: Modified `Makefile` to support live-reloading for documentation development.
+
+### Fixed
+
+- **Karaoke Deduplication**: Improved `KaraokeDeduplicator` logic and added comprehensive VTT fixtures for edge-case testing.
+- **Git**: Properly ignored `.vscode` internal state while keeping shared configurations.
+
 ## [0.1.1] - 2026-01-12
 
 ### Fixed

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "whisper-vtt2srt"
-version = "0.1.1"
+version = "0.1.2"
 description = "A professional, robust library for converting WebVTT to SRT with advanced cleaning capabilities for AI-generated subtitles."
 readme = "README.md"
 authors = [
