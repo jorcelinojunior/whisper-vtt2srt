@@ -10,23 +10,26 @@
   <link rel="apple-touch-icon" sizes="180x180" href="../img/favicon/apple-touch-icon.png" />
   <link rel="manifest" href="../img/favicon/site.webmanifest" />
 
-  <title>Srt Converter Playground - Whisper VTT2SRT</title>
+  <title>.VTT to .SRT Converter Playground | Whisper VTT2SRT</title>
 
-  <!-- Design Resources -->
+  <!-- Performance Optimization: Resource Hints -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-    rel="stylesheet">
+  <link rel="preconnect" href="https://pyscript.net" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://pypi.org">
+  <link rel="preconnect" href="https://files.pythonhosted.org">
+
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://pyscript.net">
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+
+  <link rel="modulepreload" href="https://pyscript.net/releases/2025.2.3/core.js">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- PyScript -->
   <link rel="stylesheet" href="https://pyscript.net/releases/2025.2.3/core.css" />
   <script type="module" src="https://pyscript.net/releases/2025.2.3/core.js"></script>
-  <!-- <script async="async" data-cfasync="false" src="https://pl28464901.effectivegatecpm.com/be97e79d30e7ea80c81cb60b5629e8e5/invoke.js"></script> -->
-  <script async="async" data-cfasync="false" src="invoke.js"></script>
-
-  <script> function loadFallback() { var s = document.createElement('script'); s.src = 'invoke.js'; document.head.appendChild(s); } </script>
-  <script src="https://pl28464901.effectivegatecpm.com/be97e79d30e7ea80c81cb60b5629e8e5/invoke.js" async="async" data-cfasync="false" onerror="this.onerror=null; loadFallback();"></script>
 
   <!-- Custom Style -->
   <link rel="stylesheet" href="playground.css">
@@ -36,24 +39,32 @@
 
   <!-- Header (Hidden in Embed Mode) -->
   <header>
-    <a href="https://github.com/jorcelinojunior/whisper-vtt2srt" class="brand" target="_blank"
-      rel="noopener">whisper-vtt2srt</a>
-    <nav class="nav_links">
-      <a href="https://jorcelinojunior.github.io/whisper-vtt2srt/" target="_blank" rel="noopener">Documentation</a>
-      <a href="https://github.com/jorcelinojunior/whisper-vtt2srt" class="github-btn" target="_blank" rel="noopener">
+    <a href="https://github.com/jorcelinojunior/whisper-vtt2srt" class="brand" target="_blank" rel="noopener">whisper-vtt2srt</a>
+    <nav class="nav-links">
+      <!-- Documentation Button -->
+      <a href="https://jorcelinojunior.github.io/whisper-vtt2srt/" class="nav-link" target="_blank" rel="noopener">
+        <span>Documentation</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M4 5.5H9C10.1046 5.5 11 6.39543 11 7.5V16.5C11 17.0523 10.5523 17.5 10 17.5H4C3.44772 17.5 3 17.0523 3 16.5V6.5C3 5.94772 3.44772 5.5 4 5.5ZM14 19.5C13.6494 19.5 13.3128 19.4398 13 19.3293V19.5C13 20.0523 12.5523 20.5 12 20.5C11.4477 20.5 11 20.0523 11 19.5V19.3293C10.6872 19.4398 10.3506 19.5 10 19.5H4C2.34315 19.5 1 18.1569 1 16.5V6.5C1 4.84315 2.34315 3.5 4 3.5H9C10.1947 3.5 11.2671 4.02376 12 4.85418C12.7329 4.02376 13.8053 3.5 15 3.5H20C21.6569 3.5 23 4.84315 23 6.5V16.5C23 18.1569 21.6569 19.5 20 19.5H14ZM13 7.5V16.5C13 17.0523 13.4477 17.5 14 17.5H20C20.5523 17.5 21 17.0523 21 16.5V6.5C21 5.94772 20.5523 5.5 20 5.5H15C13.8954 5.5 13 6.39543 13 7.5ZM5 7.5H9V9.5H5V7.5ZM15 7.5H19V9.5H15V7.5ZM19 10.5H15V12.5H19V10.5ZM5 10.5H9V12.5H5V10.5ZM19 13.5H15V15.5H19V13.5ZM5 13.5H9V15.5H5V13.5Z" />
+        </svg>
+      </a>
+
+      <!-- GitHub Button -->
+      <a href="https://github.com/jorcelinojunior/whisper-vtt2srt" class="nav-link" target="_blank" rel="noopener">
         <span>GitHub</span>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-          <path
-            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
         </svg>
+      </a>
+
+      <!-- Buy Me a Coffee Button -->
+      <a href="https://buymeacoffee.com/jorcelinojunior" class="nav-link bmc-btn" target="_blank" rel="noopener" title="Buy me a coffee">
+        <span>Buy me a coffee</span> ☕
       </a>
     </nav>
   </header>
 
   <main>
-    <!-- Top Ad Placeholder -->
-    <div id="container-be97e79d30e7ea80c81cb60b5629e8e5" class="ad-container">
-    </div>
 
     <!-- App Container -->
     <div class="app-card">
@@ -70,8 +81,21 @@ Kind: captions
 Language: en
 
 00:00:01.000 --> 00:00:04.000
-Start pasting your VTT
-content here to test.</textarea>
+Start pasting your VTT content here to test.
+
+00:00:05.000 --> 00:00:08.000
+Start pasting your VTT content here to test.
+[Music Playing]
+
+00:00:09.000 --> 00:00:12.000
+[Music Playing]
+This is a sample subtitle
+file for conversion.
+
+00:00:13.000 --> 00:00:16.000
+Enjoy using the whisper-vtt2srt
+playground!
+</textarea>
       </div>
 
       <!-- Controls -->
@@ -92,6 +116,14 @@ content here to test.</textarea>
           autocorrect="off" autocapitalize="off" translate="no" autocomplete="off"></textarea>
       </div>
     </div>
+
+    <!-- Ad Placeholder (Desktop) -->
+    <div id="ad-desktop" class="ad-container ad-desktop">
+      <div id="container-be97e79d30e7ea80c81cb60b5629e8e5"></div>
+    </div>
+
+    <!--  Ad Placeholder (Mobile) -->
+    <div id="ad-mobile" class="ad-container ad-mobile"></div>
 
     <!-- SEO and Educational Content -->
     <div class="content-section">
@@ -116,7 +148,7 @@ content here to test.</textarea>
       <article class="content-block">
         <h2>Clean Whisper Subtitles & yt-dlp Workflow</h2>
         <p>
-          If you use <strong>OpenAI Whisper</strong> for transcription or <strong>yt-dlp</strong> to download YouTube
+          If you use <a href="https://github.com/openai/whisper" target="_blank" rel="noopener">OpenAI Whisper</a> for transcription or <strong>yt-dlp</strong> to download YouTube
           auto-captions, you've likely encountered the "stuttering" effect where text accumulates line-by-line.
           This <em>Karaoke Deduplication</em> is exactly what this tool solves.
         </p>
@@ -157,13 +189,23 @@ content here to test.</textarea>
         <code id="pip_install">pip install whisper-vtt2srt</code>
       </article>
 
+      <article class="bmc-block"
+        style="text-align: center; border-top: 1px solid var(--glass-border); padding-top: 40px;">
+        <h4 style="margin-bottom: 10px; opacity: 0.8;">Saved you time? Helped your project?</h4>
+        <p style="margin: 10px auto;">Your support keeps the project alive!</p>
+        <a href="https://buymeacoffee.com/jorcelinojunior" class="nav-link bmc-btn" target="_blank" rel="noopener"
+          title="Buy me a coffee" style="color: rgba(255, 181, 0, 1); margin: 10px auto; text-decoration: none;">
+          ☕ <span>Buy me a coffee</span> ☕
+        </a>
+      </article>
+
     </div>
 
   </main>
 
   <!-- Footer (Hidden in Embed Mode) -->
   <footer>
-    <p>&copy; 2026 whisper-vtt2srt Project. Open Source under MIT License.</p>
+    <p>&copy; <span id="year">2026</span> whisper-vtt2srt Project. Open Source under MIT License.</p>
   </footer>
 
   <!-- PyScript Config -->
@@ -231,18 +273,16 @@ content here to test.</textarea>
             print("Library pre-warmed successfully")
         except Exception as e:
             print(f"Library load warning: {e}")
-
     </script>
 
   <!-- Mode Detection & Theme Sync JS -->
   <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
     const urlParams = new URLSearchParams(window.location.search);
     const isEmbed = urlParams.get('embed') === 'true';
 
     // 1. Activate Embed Mode
-    if (isEmbed) {
-      document.body.classList.add('embed-mode');
-    }
+    if (isEmbed) document.body.classList.add('embed-mode');
 
     // 2. Theme Synchronization (Same-Origin Only)
     // This allows the iframe to react to the MkDocs theme toggle (Light/Dark)
@@ -273,9 +313,7 @@ content here to test.</textarea>
         // Watch for changes (User clicks toggle)
         const observer = new MutationObserver((mutations) => {
           mutations.forEach((mutation) => {
-            if (mutation.attributeName === 'data-md-color-scheme') {
-              updateTheme();
-            }
+            if (mutation.attributeName === 'data-md-color-scheme') updateTheme();
           });
         });
 
@@ -285,17 +323,40 @@ content here to test.</textarea>
         // Determine fallback if blocked (e.g. Cross-Origin or standalone)
         console.warn("[Playground] Theme sync failed (likely Cross-Origin). Using default.", e);
         // Fallback: Check System Preference
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches)
           document.body.classList.add('light-theme');
-        }
       }
     }
 
     // Run Sync
-    if (isEmbed) {
-      initThemeSync();
-    }
+    if (isEmbed) initThemeSync();
   </script>
+
+  <script>
+    const loadAdScript = ({ src, options, target = document.body }) => {
+      if (document.querySelector(`script[src="${src}"]`)) return
+      if (options) window.atOptions = options
+      const s = document.createElement('script')
+      Object.assign(s, { src, async: true, defer: true, crossOrigin: 'anonymous' })
+      target.appendChild(s)
+    }
+    const media = matchMedia('(max-width: 768px)')
+    const adMobile = document.getElementById('ad-mobile')
+    const loadAd = () =>
+      media.matches
+        ? loadAdScript({
+            src: 'https://www.highperformanceformat.com/6ca9afae836cc3e6c4aedb3e6b4611b9/invoke.js',
+            options: { key: '6ca9afae836cc3e6c4aedb3e6b4611b9', format: 'iframe', height: 50, width: 320, params: { ad_type: 'mobile' } },
+            target: adMobile
+          })
+        : loadAdScript({ src: 'https://pl28464901.effectivegatecpm.com/be97e79d30e7ea80c81cb60b5629e8e5/invoke.js' })
+    loadAd()
+    media.addEventListener('change', () => location.reload())
+    const pip = document.getElementById("pip_install");
+    pip.addEventListener("click", () => { navigator.clipboard.writeText(pip.textContent).then(() => { pip.style.color = "var(--primary-color)"; setTimeout(() => pip.style.color = "", 1000); });
+  });
+  </script>
+
 </body>
 
 </html>

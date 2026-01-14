@@ -62,16 +62,22 @@ header {
   text-decoration: none;
 }
 
-.nav_links a {
+.nav-links {
+  display: flex;
+  gap: 12px;
+  text-align: right;
+  align-items: center;
+  justify-content: center;
+}
+.nav-links a {
   color: var(--text-muted);
   text-decoration: none;
-  margin-left: 20px;
   font-size: 0.95rem;
   transition: color 0.3s;
 }
-.nav_links a:hover { color: var(--text-main); }
-.github-btn {
-  background: rgba(255,255,255,0.1);
+.nav-links a:hover { color: var(--text-main); }
+.nav-link {
+  background: rgba(255, 255, 255, 0.1);
   padding: 8px 16px;
   border-radius: 20px;
   display: inline-flex;
@@ -85,7 +91,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px 20px;
+  padding: 20px;
   max-width: 1400px;
   margin: 0 auto;
   width: 100%;
@@ -96,15 +102,43 @@ main {
   width: 100%;
   max-width: 728px;
   height: auto;
-  background: rgba(255,255,255,0.02);
+  background: rgba(255, 255, 255, 0.02);
   border: 1px dashed var(--glass-border);
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 40px;
+  margin-top: 40px;
   color: var(--text-muted);
   font-size: 0.8rem;
-  border-radius: 8px;
+}
+
+/* Ad Responsiveness */
+.ad-desktop { display: flex; min-height: 215px; }
+.ad-mobile { display: none; }
+
+/* BMC Button custom adjustment */
+.bmc-block {
+  & h4 {
+    margin-bottom:12px;font-size:1.4rem;font-weight:700;line-height:1.15;letter-spacing:-.02em;text-decoration:none;background:linear-gradient(160deg,rgba(255,197,0,1)0%,rgba(208,160,3,0.85)45%,rgba(255,202,0,0.9)60%,rgba(208,176,3,0.9)100%);
+    background-size:200% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 1px 0 #0000000f;transition:text-shadow 10ms ease,transform 180ms ease;animation:bmcH4Gradient 3s ease-in-out infinite;
+  }
+  @keyframes bmcH4Gradient { 0%{background-position:0 50%} 50%{background-position:100% 50%} 100%{background-position:0 50%} }
+  @media (prefers-reduced-motion: reduce) { h4{animation:none;transition:none} }
+}
+
+.bmc-btn {
+  padding: 8px 12px;
+  box-shadow: 0 0 3px rgba(255, 181, 0, 1);
+  outline: 1px solid rgba(255, 181, 0, .75);
+  outline-offset: -1px;
+  animation: pulseShadowYellow 2s infinite;
+  & > span { color: rgba(255, 181, 0, 1); font-weight: 700; letter-spacing: -.02em; text-decoration: none; background: linear-gradient(160deg, rgba(255, 197, 0, 1)0%, rgba(208, 160, 3, 0.85)45%, rgba(255, 202, 0, 0.9)60%, rgba(208, 176, 3, 0.9)100%); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; transition: text-shadow 10ms ease, transform 180ms ease; animation: bmcH4Gradient 3s ease-in-out infinite; }
+}
+
+@keyframes pulseShadowYellow {
+  0% { box-shadow: 0 0 1px rgba(255, 255, 255, 0.3); }
+  50% { box-shadow: 0 0 5px rgba(255, 181, 0, 1); }
+  100% { box-shadow: 0 0 1px rgba(255, 255, 255, 0.3); }
 }
 
 /* --- Converter App Card --- */
@@ -180,7 +214,7 @@ textarea:focus { border-color: var(--primary-color); }
   justify-content: center;
   align-items: center;
   font-size: 24px;
-
+  animation: pulseShadow 2s infinite;
   & #btn_icon { line-height: 1; font-weight: bold; }
 }
 .convert-btn:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(99, 102, 241, 0.6); }
@@ -189,7 +223,7 @@ textarea:focus { border-color: var(--primary-color); }
 #spinner {
   width: 24px;
   height: 24px;
-  border: 3px solid rgba(255,255,255,0.3);
+  border: 3px solid rgba(255, 255, 255, 0.3);
   border-top-color: white;
   border-radius: 50%;
   animation: spin 1s linear infinite;
@@ -197,9 +231,14 @@ textarea:focus { border-color: var(--primary-color); }
 }
 
 @keyframes spin { to { transform: rotate(360deg); } }
+@keyframes pulseShadow {
+  0% { box-shadow: 0 0 3px rgba(99, 102, 241, 0.3); }
+  50% { box-shadow: 0 0 15px rgba(99, 102, 241, 0.7); }
+  100% { box-shadow: 0 0 3px rgba(99, 102, 241, 0.3); }
+}
 
 /* --- Content Sections --- */
-.content-section { width: 100%; max-width: 900px; margin-top: 60px; display: flex; flex-direction: column; gap: 40px; }
+.content-section { width: 100%; max-width: 900px; margin-top: 20px; display: flex; flex-direction: column; gap: 40px; }
 .content-block { line-height: 1.7; color: var(--text-muted); }
 .content-block h2 { color: var(--text-main); margin-bottom: 20px; font-size: 1.8rem; font-weight: 700; }
 .content-block h3 { color: var(--text-main); margin-top: 24px; margin-bottom: 12px; font-size: 1.3rem; font-weight: 600; }
@@ -208,6 +247,7 @@ textarea:focus { border-color: var(--primary-color); }
 .content-block a:hover { text-decoration: underline; }
 .content-block ul { margin-bottom: 20px; padding-left: 20px; }
 .content-block li { margin-bottom: 8px; }
+.content-block li code { background: var(--input-bg); padding: 2px 4px; border-radius: 4px; font-family: var(--font-mono); font-style: italic; color: var(--primary-color); font-weight: 500; font-size: 0.85rem; }
 
 /* --- Footer --- */
 footer {
@@ -221,7 +261,6 @@ footer {
 
 /* --- EMBED MODE (Minimal UI) --- */
 body.embed-mode {
-  /* background: var(--md-default-bg-color); */
   padding: 0;
   min-height: auto;
 }
@@ -243,7 +282,14 @@ body.embed-mode .app-card {
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
+  .brand { font-size: 1.3rem; }
+  header { padding: 20px; }
   .app-card { flex-direction: column; height: auto; }
+  .ad-desktop { display: none; }
+  .ad-mobile { display: flex; height: auto; min-height: 50px; }
+  .nav-links { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; justify-items: right; }
+  .nav-links a { width: max-content; margin-left: 0; padding: 6px; }
+  .nav-links a span { display: none; }
   .actions-col { flex-direction: row; height: auto; padding: 20px 0; }
   .convert-btn {
     width: 100%;
@@ -275,7 +321,8 @@ body.embed-mode .app-card {
   -webkit-text-fill-color: transparent;
   transition: transform .2s ease, border-color .2s ease;
 }
-#pip_install:hover { transform: scale(1.03); border-color: var(--primary-color); }
+#pip_install:hover { transform: scale(1.03); border-color: var(--primary-color); cursor: pointer; }
+#pip_install:active { transform: scale(0.97); }
 #pip_install:before,
 #pip_install:after {
   content: '';
